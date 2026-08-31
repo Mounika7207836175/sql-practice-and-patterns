@@ -1,30 +1,17 @@
-# SQL Practice & Query Patterns
+# Real-World SQL Practice & Query Lab
 
-Welcome to my SQL repository! This project serves as a practical library where I document SQL queries, database concepts, optimization techniques, and solutions to real-world data retrieval problems.
+A structured collection of real-world SQL problems, query patterns, and database concepts. This repository tracks production-style data scenarios, query optimizations, edge cases, and multi-approach problem solving across different relational database systems (PostgreSQL, MySQL, SQL Server).
 
-## 📌 Repository Purpose
-- Document end-to-end solutions for relational database queries (PostgreSQL / SQL Server / MySQL).
-- Explore multiple solution techniques (Subqueries, Joins, Set Operations, Aggregations) for the same problem.
-- Track common SQL pitfalls, duplicate handling (`DISTINCT`), and execution behavior.
+---
 
-## 🛠️ Topics Covered
-- **Filtering & Subqueries:** `IN`, `EXISTS`, correlated subqueries
-- **Set Operations:** `INTERSECT`, `UNION`, `EXCEPT`
-- **Joins:** `INNER JOIN`, `LEFT JOIN`, Self-Joins
-- **Aggregations:** `GROUP BY`, `HAVING`, `COUNT(DISTINCT ...)`
+## 📂 Repository Contains
 
-## 💡 Highlighted Problem Patterns
-
-### Finding Customers Who Purchased Multiple Specific Items
-**Scenario:** Identify customers who purchased both `Apple` AND `Orange`.
-
-- **Approach 1: Subquery (`IN`)**
-  ```sql
-  SELECT DISTINCT CustomerName 
-  FROM CustomerPurchases 
-  WHERE Fruit = 'Orange' 
-    AND CustomerName IN (
-        SELECT CustomerName 
-        FROM CustomerPurchases 
-        WHERE Fruit = 'Apple'
-    );
+```text
+.
+├── 01-filtering-and-subqueries/     # Complex conditional filtering, IN/EXISTS, correlated subqueries
+├── 02-joins-and-relationships/      # Self-joins, multi-table joins, anti-joins, non-equi joins
+├── 03-aggregations-and-grouping/    # Conditional aggregations, GROUP BY, HAVING, pivot operations
+├── 04-window-functions/             # Running totals, ranking (DENSE_RANK, ROW_NUMBER), lead/lag analysis
+├── 05-data-cleaning-and-strings/    # Null handling (COALESCE), string manipulation, parsing, casting
+├── 06-set-operations/               # UNION, INTERSECT, EXCEPT, duplicate analysis
+└── 07-advanced-patterns/            # Recursive CTEs, transaction integrity, execution tuning

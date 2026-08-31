@@ -4,7 +4,7 @@
 Given a table of customer purchases, write a SQL query to identify all customers who purchased **both** an `'Apple'` **and** an `'Orange'`.
 
 ### Sample Schema & Dataset
-```sql
+```
 CREATE TABLE CustomerPurchases (
     CustomerName VARCHAR(50),
     Fruit VARCHAR(50)
@@ -21,11 +21,10 @@ VALUES
     ('Emma', 'Banana'),
     ('Alice', 'Apple'); -- Duplicate entry for testing
 ```
-🎯 Expected Output
+**🎯 Expected Output**
 CustomerName
 Alice
 David
-```
 
 **Approach 1: Subquery with IN (My Initial Approach)**
 ```
@@ -39,6 +38,7 @@ WHERE Fruit = 'Orange'
   );
 ```
 **Approach 2: Set Operations (INTERSECT)**
+```
 SELECT CustomerName FROM CustomerPurchases WHERE Fruit = 'Apple'
 INTERSECT
 SELECT CustomerName FROM CustomerPurchases WHERE Fruit = 'Orange'

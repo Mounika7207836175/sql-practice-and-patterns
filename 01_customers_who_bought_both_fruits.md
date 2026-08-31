@@ -20,14 +20,15 @@ VALUES
     ('David', 'Orange'),
     ('Emma', 'Banana'),
     ('Alice', 'Apple'); -- Duplicate entry for testing
-
+```
 🎯 Expected Output
 CustomerName
 Alice
 David
-
+```
 
 **Approach 1: Subquery with IN (My Initial Approach)**
+```
 SELECT DISTINCT CustomerName 
 FROM CustomerPurchases 
 WHERE Fruit = 'Orange' 
@@ -36,20 +37,21 @@ WHERE Fruit = 'Orange'
       FROM CustomerPurchases 
       WHERE Fruit = 'Apple'
   );
-
+```
 **Approach 2: Set Operations (INTERSECT)**
 SELECT CustomerName FROM CustomerPurchases WHERE Fruit = 'Apple'
 INTERSECT
 SELECT CustomerName FROM CustomerPurchases WHERE Fruit = 'Orange'
 ORDER BY CustomerName ASC;
-
+```
 **Approach 3: Conditional Aggregation (GROUP BY + HAVING)**
+```
 SELECT CustomerName
 FROM CustomerPurchases
 WHERE Fruit IN ('Apple', 'Orange')
 GROUP BY CustomerName
 HAVING COUNT(DISTINCT Fruit) = 2;
-
+```
 **🧠 Doubts Faced & Key Learnings**
 1. Why DISTINCT is necessary in the Subquery approach
 Observation: Running WHERE Fruit = 'Orange' checks every single matching row.

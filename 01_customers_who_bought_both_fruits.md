@@ -67,7 +67,7 @@ Reason: SQL relational tables and set operations have no guaranteed row order by
 
 Takeaway: Never rely on implicit output ordering in SQL; always append an explicit ORDER BY clause if order matters.
 
-**Using Exists**
+**Approach 4: Using Exists**
 usually exists return whether at least one row exists or not and it don't care about the values.
 ```select DISTINCT CustomerName from CustomerPurchases c1
 where c1.fruit='Apple'

@@ -75,3 +75,11 @@ where c1.fruit='Apple'
 AND exists(select 1 from CustomerPurchases c2
     where c2.fruit='Orange' AND c1.CustomerName=c2.CustomerName) ;
 ```
+**Approach 5: Using selft inner join**
+```
+select DISTINCT c1.CustomerName from CustomerPurchases c1
+join CustomerPurchases c2
+on c1.CustomerName=c2.CustomerName
+where c1.fruit='Orange' AND
+c2.fruit='Apple';
+```

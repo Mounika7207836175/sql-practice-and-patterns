@@ -72,4 +72,4 @@ usually exists return whether at least one row exists or not and it don't care a
 ```select DISTINCT CustomerName from CustomerPurchases c1
 where c1.fruit='Apple'
 AND exists(select 1 from CustomerPurchases c2
-    where c2.fruit='Orange' AND c1.CustomerName=c2.CustomerName) ;```
+    where c2.fruit='Orange' AND c1.CustomerName=c2.CustomerName) ;

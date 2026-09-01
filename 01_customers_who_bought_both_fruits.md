@@ -66,3 +66,10 @@ Observation: In PostgreSQL, INTERSECT outputted David then Alice, unlike the ins
 Reason: SQL relational tables and set operations have no guaranteed row order by default. Set operations like INTERSECT remove duplicates by using internal hash tables or sorting algorithms, which alters row output sequence.
 
 Takeaway: Never rely on implicit output ordering in SQL; always append an explicit ORDER BY clause if order matters.
+
+**Using Exists**
+usually exists return whether at least one row exists or not and it don't care about the values.
+```select DISTINCT CustomerName from CustomerPurchases c1
+where c1.fruit='Apple'
+AND exists(select 1 from CustomerPurchases c2
+    where c2.fruit='Orange' AND c1.CustomerName=c2.CustomerName) ;```

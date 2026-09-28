@@ -1,1 +1,1 @@
-
+This folder contains a collection of SQL practice problems ranging from basic to advanced levels. The exercises cover various SQL concepts, including queries, joins, subqueries, aggregate functions, window functions, stored procedures, and other advanced database techniques.
